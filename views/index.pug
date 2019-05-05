@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= "Url-Shortner : Surl"
+  br
+  h5= "Use curl to generate short-url in the following manner : "
+  i= "curl -X POST \n  "+  origin + " \n  -H 'Content-Type: application/json' \n  -d '{ \n	'url' : '<your-long-url>' \n}'"

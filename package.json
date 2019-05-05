@@ -1,0 +1,42 @@
+{
+  "name": "url-shortner-service",
+  "version": "1.0.0",
+  "description": "A service to shorten long URLs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "dotenv": "^8.0.0",
+    "express": "~4.15.2",
+    "mongoose": "^5.5.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavi-rstg/url-shortner-service.git"
+  },
+  "keywords": [
+    "node.js",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "author": "pavi.rstg@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavi-rstg/url-shortner-service/issues"
+  },
+  "homepage": "https://github.com/pavi-rstg/url-shortner-service#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
