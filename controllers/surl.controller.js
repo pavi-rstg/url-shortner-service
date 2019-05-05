@@ -29,7 +29,7 @@ module.exports = {
                 else if (doc) {
                     //return already shortened url
                     res.json({
-                        shortUrl : doc.surl
+                        shortUrl : req.protocol + '://' + (req.headers.host) + '/'+ doc.surl
                     });
                 }
                 else {
@@ -48,7 +48,7 @@ module.exports = {
                         }
                         else {
                             res.json({
-                                shortUrl : surlObj.surl
+                                shortUrl : req.protocol + '://' + (req.headers.host) + '/'+ surlObj.surl
                             });
                         }
                     })
@@ -63,7 +63,8 @@ module.exports = {
     * @param {*} res 
     * @param {*} next 
     */
-    redirectToUrl: function(req, res, next) {
+    redirectToUrl: function (req, res, next) {
+        console.log(req.params)
         Surl.findOne({ surl: req.params.surl + (req.params[0] ? req.params[0] : '') }, function (err, doc) {
             if (err) {
                 var err = new Error("Whoops!");
@@ -71,6 +72,9 @@ module.exports = {
                 next(err);
             }
             else if (doc) {
+                if (doc.url.indexOf('http://') != 0 || doc.url.indexOf('https://') != 0) {
+                    doc.url = 'http://' + doc.url
+                }
                 res.redirect(doc.url);
             }
             else {
