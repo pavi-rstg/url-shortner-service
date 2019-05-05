@@ -4,4 +4,4 @@ block content
   h1= "Url-Shortner : Surl"
   br
   h5= "Use curl to generate short-url in the following manner : "
-  i= "curl -X POST \n  "+  origin + " \n  -H 'Content-Type: application/json' \n  -d '{ \n	'url' : '<your-long-url>' \n}'"
+  i= 'curl -d "{\"url\":\"your-long-url\"}" -H "Content-Type: application/json" -X POST ' + origin
