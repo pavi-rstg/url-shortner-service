@@ -33,3 +33,5 @@ Recommended: to use a process manager such as [pm2](http://pm2.keymetrics.io/ "p
 npm install pm2 -g
 pm2 start npm -- start
 ```
+## Usage
+`curl -X POST http://localhost:PORT -H 'Content-Type: application/json'  -d '{ 'url' : '<your-long-url>' }`
